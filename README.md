@@ -1,6 +1,7 @@
 ## Setup
 
-Update env.example with the necessary values.
+Copy .env.example and rename to .env. Update .env with the necessary values.
+Import the database .sql file into your local database.
 
 ## Installation
 

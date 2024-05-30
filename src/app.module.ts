@@ -7,7 +7,6 @@ import { join } from 'path';
 import { RoomModule } from './modules/room/room.module';
 import { UtilityModule } from './modules/utility/utility.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -25,13 +24,12 @@ import { UtilityModule } from './modules/utility/utility.module';
         password: config.get('DB_PASSWORD'),
         database: config.get('DB_NAME'),
         entities: [join(process.cwd(), 'dist/**/*.entity.js')],
-        // synchronize: true,
+        synchronize: true,
         logging: true,
-        seeds: ["src/seeds/**/*{.ts}"]
       }),
     }),
     RoomModule,
-    UtilityModule
+    UtilityModule,
   ],
   controllers: [AppController],
   providers: [AppService],
